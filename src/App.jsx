@@ -3,126 +3,439 @@ import {
   Github,
   Linkedin,
   Mail,
-  Code2,
-  Trophy,
-  Terminal,
+  ArrowRight,
+  ExternalLink,
 } from "lucide-react";
 
 import {
   SiReact,
   SiJavascript,
-  SiCplusplus,
   SiPython,
-  SiMongodb,
-  SiPostgresql,
-  SiTailwindcss,
+  SiCplusplus,
   SiNodedotjs,
+  SiFastapi,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiDocker,
+  SiTailwindcss,
+  SiBootstrap,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiCodeforces,
+  SiCodechef,
+  SiLeetcode,
+  SiHtml5,
+  SiExpress,
+  SiFlask,
+  SiVite,
+  SiC,
+  SiFigma,
 } from "react-icons/si";
 
+import "./style.css";
+
+const techCategories = [
+  {
+    title: "Languages",
+    items: [
+      { icon: <SiC />, name: "C Langugae" },
+      { icon: <SiCplusplus />, name: "C++" },
+      { icon: <SiPython />, name: "Python" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+    ],
+  },
+
+  {
+  title: "Frontend",
+  items: [
+    { icon: <SiReact />, name: "React" },
+    { icon: <SiTailwindcss />, name: "Tailwind" },
+    { icon: <SiBootstrap />, name: "Bootstrap" },
+    { icon: <SiHtml5 />, name: "HTML5" },
+  ],
+},
+
+  {
+    title: "Backend",
+    items: [
+      { icon: <SiNodedotjs />, name: "Node.js" },
+      { icon: <SiExpress />, name: "Express" },
+      { icon: <SiFastapi />, name: "FastAPI" },
+      { icon: <SiFlask />, name: "Flask" },
+    ],
+  },
+
+  {
+    title: "Databases",
+    items: [
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiRedis />, name: "Redis" },
+    ],
+  },
+
+  {
+    title: "Machine Learning",
+    items: [
+      { icon: <SiPython />, name: "Scikit-Learn" },
+      { icon: <SiPython />, name: "Pandas" },
+      { icon: <SiPython />, name: "NumPy" },
+      { icon: <SiPython />, name: "LightGBM" },
+      { icon: <SiPython />, name: "XGBoost" },
+    ],
+  },
+
+  {
+  title: "Tools",
+  items: [
+    { icon: <SiFigma />, name: "Figma" },
+    { icon: <SiGithub />, name: "GitHub" },
+    { icon: <SiDocker />, name: "Docker" },
+    { icon: <SiPostman />, name: "Postman" },
+    { icon: <SiVite />, name: "Vite" },
+  ],
+},
+];
+
+const cpProfiles = [
+  {
+    icon: <SiCodeforces />,
+    name: "Codeforces",
+    rating: "1421",
+    rank: "Specialist",
+    link: "https://codeforces.com/profile/phogatnishantt",
+  },
+
+  {
+    icon: <SiCodechef />,
+    name: "CodeChef",
+    rating: "1639",
+    rank: "3★ Coder",
+    link: "https://www.codechef.com/users/phogatx05",
+  },
+
+  {
+    icon: <SiLeetcode />,
+    name: "LeetCode",
+    rating: "Problem Solving",
+    rank: "DSA & CP",
+    link: "https://leetcode.com/u/phogatnishantt/",
+  },
+
+  {
+    icon: "🏆",
+    name: "AtCoder",
+    rating: "180",
+    rank: "Highest Rating",
+    link: "https://atcoder.jp/users/phogatnishantt",
+  },
+];
+
+const projects = [
+  {
+    title: "Customer Retention Analytics",
+    description:
+      "AI-powered customer churn prediction platform designed to identify at-risk customers before they leave. Built using FastAPI, React, LightGBM and Scikit-Learn with interactive analytics dashboards and real-time prediction capabilities.",
+
+    tech: [
+      "React",
+      "FastAPI",
+      "LightGBM",
+      "Scikit-Learn",
+      "PostgreSQL",
+    ],
+
+    github:
+      "https://github.com/phogatnishantt/Customer-retention-analytics",
+  },
+
+  {
+    title: "Real-Time Stock Market Analytics",
+    description:
+      "Modern stock analytics platform providing market tracking, trend analysis, historical insights and scalable backend architecture using React, Node.js, PostgreSQL, Redis and Docker.",
+
+    tech: [
+      "React",
+      "Node.js",
+      "Redis",
+      "Docker",
+      "PostgreSQL",
+    ],
+
+    github: "https://github.com/phogatnishantt",
+  },
+];
+
 export default function App() {
-  const skills = [
-    {
-      name: "React",
-      icon: <SiReact />,
-    },
-    {
-      name: "JavaScript",
-      icon: <SiJavascript />,
-    },
-    {
-      name: "C++",
-      icon: <SiCplusplus />,
-    },
-    {
-      name: "Python",
-      icon: <SiPython />,
-    },
-    {
-      name: "MongoDB",
-      icon: <SiMongodb />,
-    },
-    {
-      name: "PostgreSQL",
-      icon: <SiPostgresql />,
-    },
-    {
-      name: "Tailwind",
-      icon: <SiTailwindcss />,
-    },
-    {
-      name: "Node.js",
-      icon: <SiNodedotjs />,
-    },
-  ];
-
-  const stats = [
-    {
-      title: "Codeforces",
-      value: "1332",
-      desc: "Max Rating",
-    },
-    {
-      title: "CodeChef",
-      value: "1629",
-      desc: "Max Rating",
-    },
-    {
-      title: "LeetCode",
-      value: "1540",
-      desc: "Contest Rating",
-    },
-    {
-      title: "DSA Problems",
-      value: "400+",
-      desc: "Solved",
-    },
-  ];
-
   return (
     <div className="app">
-      {/* Navbar */}
-
+      <div className="aurora aurora1"></div>
+      <div className="aurora aurora2"></div>
+      <div className="aurora aurora3"></div>
       <nav className="navbar">
-        <h1>Nishant Phogat</h1>
-
+        <div className="logo">
+          Nishant Phogat<span></span>
+        </div>
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#stats">Stats</a>
+          <a href="#home">Home</a>
+          <a href="#tech">Tech Stack</a>
+          <a href="#cp">CP Profiles</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
+      <section id="home" className="hero">
+        <div className="hero-left">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="hero-badge">
+              Full Stack Developer • ML Enthusiast • Competitive Programmer
+            </span>
 
-      {/* Hero */}
+            <h1>
+              Nishant
+              <br />
+              <span>Phogat</span>
+            </h1>
 
-      <section className="hero">
+            <p>
+              Crafting scalable applications, AI-powered
+              solutions and high-performance systems using
+              modern web technologies and machine learning.
+            </p>
 
+            <div className="hero-buttons">
+              <a href="#projects" className="primary-btn">
+                View Projects
+                <ArrowRight size={18} />
+              </a>
+
+              <a
+                href="https://github.com/phogatnishantt"
+                target="_blank"
+                rel="noreferrer"
+                className="glass-btn"
+              >
+                <Github size={20} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/nishant-phogat-3478a7360/"
+                target="_blank"
+                rel="noreferrer"
+                className="glass-btn"
+              >
+                <Linkedin size={20} />
+              </a>
+
+              <a
+                href="mailto:phogatnishant0508@gmail.com"
+                className="glass-btn"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="hero-right">
+          <div className="hero-orb react">
+            <SiReact />
+          </div>
+
+          <div className="hero-orb node">
+            <SiNodedotjs />
+          </div>
+
+          <div className="hero-orb python">
+            <SiPython />
+          </div>
+
+          <div className="hero-orb postgres">
+            <SiPostgresql />
+          </div>
+
+          <div className="hero-orb docker">
+            <SiDocker />
+          </div>
+
+          <div className="hero-orb fastapi">
+            <SiFastapi />
+          </div>
+        </div>
+      </section>
+      <section id="tech" className="section">
+        <div className="section-header">
+          <span className="section-tag">TECH STACK</span>
+          <h2>Technologies I Work With</h2>
+        </div>
+
+        <div className="tech-grid">
+          {techCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              className="tech-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true }}
+            >
+              <div className="tech-card-header">
+                <h3>{category.title}</h3>
+              </div>
+
+              <div className="tech-floating-container">
+                {category.items.map((tech, i) => (
+                  <div
+                    key={tech.name}
+                    className={`tech-pill tech-pill-${
+                      (i % 5) + 1
+                    }`}
+                  >
+                    {tech.icon}
+                    <span>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section id="cp" className="section">
+        <div className="section-header">
+          <span className="section-tag">
+            COMPETITIVE PROGRAMMING
+          </span>
+
+          <h2>Problem Solving Journey</h2>
+        </div>
+
+        <div className="cp-grid">
+          {cpProfiles.map((profile, index) => (
+            <motion.a
+              href={profile.link}
+              target="_blank"
+              rel="noreferrer"
+              key={profile.name}
+              className="cp-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+            >
+              <div className="cp-icon">
+                {profile.icon}
+              </div>
+
+              <h3>{profile.name}</h3>
+
+              <div className="cp-info">
+                <span>{profile.rating}</span>
+                <p>{profile.rank}</p>
+              </div>
+
+              <div className="cp-link">
+                View Profile →
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </section>
+      <section id="projects" className="section">
+        <div className="section-header">
+          <span className="section-tag">
+            FEATURED PROJECTS
+          </span>
+
+          <h2>Things I've Built</h2>
+        </div>
+
+        <div className="projects-container">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              className="project-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+            >
+              <div className="project-glow"></div>
+
+              <div className="project-content">
+                <h3>{project.title}</h3>
+
+                <p>{project.description}</p>
+
+                <div className="project-tech">
+                  {project.tech.map((tech) => (
+                    <span key={tech}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-btn"
+                >
+                  <Github size={18} />
+                  View Repository
+                  <ExternalLink size={16} />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      <section id="contact" className="section">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="hero-left"
+          className="contact-card"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
         >
-          <p className="tag"></p>
+          <div className="contact-glow"></div>
 
-          <h1>
-            Nishant
-            <span> Phogat</span>
-          </h1>
+          <span className="section-tag">
+            CONTACT
+          </span>
 
           <h2>
-            Competitive Programmer & Full Stack Developer
+            Let's Build Something Amazing
           </h2>
 
-          <p className="hero-desc">
-            Computer Science student at NIT Durgapur passionate about
-            competitive programming, scalable systems and modern web
-            applications.
+          <p>
+            Open to Software Engineering,
+            Full Stack Development,
+            Machine Learning opportunities
+            and exciting collaborations.
           </p>
 
-          <div className="hero-buttons">
-
+          <div className="contact-buttons">
             <a
               href="mailto:phogatnishant0508@gmail.com"
               className="primary-btn"
@@ -134,233 +447,23 @@ export default function App() {
             <a
               href="https://github.com/phogatnishantt"
               target="_blank"
-              className="secondary-btn"
+              rel="noreferrer"
+              className="glass-btn"
             >
-              <Github size={18} />
-              GitHub
-            </a>
-
-          </div>
-
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="hero-right"
-        >
-          <div className="glow-circle"></div>
-        </motion.div>
-
-      </section>
-
-      {/* About */}
-
-      <section className="section" id="about">
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="glass-card"
-        >
-          <h3>About Me</h3>
-
-          <p>
-            I am pursuing B.Tech in Computer Science Engineering from
-            National Institute of Technology, Durgapur. I actively
-            participate in competitive programming and build scalable
-            full stack applications using modern technologies.
-          </p>
-
-        </motion.div>
-
-      </section>
-
-      {/* Skills */}
-
-      <section className="section" id="skills">
-
-        <h2 className="section-title">
-          Tech Stack
-        </h2>
-
-        <div className="skills-grid">
-
-          {
-            skills.map((skill, index) => (
-
-              <motion.div
-                whileHover={{ scale: 1.08 }}
-                key={index}
-                className="skill-card"
-              >
-                <div className="skill-icon">
-                  {skill.icon}
-                </div>
-
-                <h3>{skill.name}</h3>
-
-              </motion.div>
-
-            ))
-          }
-
-        </div>
-
-      </section>
-
-      {/* Stats */}
-
-      <section className="section" id="stats">
-
-        <h2 className="section-title">
-          Coding Profiles
-        </h2>
-
-        <div className="stats-grid">
-
-          {
-            stats.map((item, index) => (
-
-              <motion.div
-                whileHover={{ y: -8 }}
-                key={index}
-                className="stats-card"
-              >
-                <Trophy className="stats-icon" />
-
-                <h3>{item.title}</h3>
-
-                <h1>{item.value}</h1>
-
-                <p>{item.desc}</p>
-
-              </motion.div>
-
-            ))
-          }
-
-        </div>
-
-        <div className="platform-links">
-
-          <a
-            href="https://codeforces.com/profile/phogatnishantt"
-            target="_blank"
-          >
-            Codeforces
-          </a>
-
-          <a
-            href="https://www.codechef.com/users/phogatx05"
-            target="_blank"
-          >
-            CodeChef
-          </a>
-
-          <a
-            href="https://leetcode.com/"
-            target="_blank"
-          >
-            LeetCode
-          </a>
-
-        </div>
-
-      </section>
-
-      {/* Projects */}
-
-      <section className="section" id="projects">
-
-        <h2 className="section-title">
-          Featured Project
-        </h2>
-
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="project-card"
-        >
-
-          <Terminal className="project-icon" />
-
-          <h2>
-            Real Time Stock Market Analytics Platform
-          </h2>
-
-          <p>
-            Full stack stock analytics platform using React.js,
-            Node.js, PostgreSQL, Redis and Prisma ORM with live
-            market tracking, portfolio management and interactive
-            dashboards.
-          </p>
-
-          <div className="project-tech">
-
-            <span>React</span>
-            <span>Node.js</span>
-            <span>PostgreSQL</span>
-            <span>Redis</span>
-
-          </div>
-
-          <div className="project-buttons">
-
-            <a
-              href="https://github.com/phogatnishantt/Stock-Market-Platform"
-              target="_blank"
-            >
-              <Github size={18} />
-              Repository
-            </a>
-
-          </div>
-
-        </motion.div>
-
-      </section>
-
-      {/* Contact */}
-
-      <section className="section" id="contact">
-
-        <div className="contact-card">
-
-          <h2>
-            Let's Connect
-          </h2>
-
-          <p>
-            Open for collaborations, projects and opportunities.
-          </p>
-
-          <div className="contact-buttons">
-
-            <a
-              href="mailto:phogatnishant0508@gmail.com"
-              className="primary-btn"
-            >
-              <Mail size={18} />
-              Email
+              <Github size={20} />
             </a>
 
             <a
               href="https://www.linkedin.com/in/nishant-phogat-3478a7360/"
               target="_blank"
-              className="secondary-btn"
+              rel="noreferrer"
+              className="glass-btn"
             >
-              <Linkedin size={18} />
-              LinkedIn
+              <Linkedin size={20} />
             </a>
-
           </div>
-
-        </div>
-
+        </motion.div>
       </section>
-
     </div>
   );
 }
